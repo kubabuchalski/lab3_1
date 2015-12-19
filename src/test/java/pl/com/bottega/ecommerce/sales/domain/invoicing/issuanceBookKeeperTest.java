@@ -11,15 +11,17 @@ import org.junit.Test;
 
 public class issuanceBookKeeperTest 
 {
+	BookKeeper bk;
+	InvoiceFactory invoiceFactory;
 	@Before
 	/**
 	 * Create mock object before you use them
 	 */
 	public void create()
 	{
-		//mathObj= mock(Math.class); //Create Math mock Object
+		invoiceFactory = mock(InvoiceFactory.class); //Create mock Object
 		//when(mathObj.add(1, 2)).thenReturn(4); // Configure it to return 3 when arguments passed are 1,2
-		//kalc = new Kalkulator(mathObj);
+		bk = new BookKeeper(invoiceFactory);
 	}
 	@Test
 	public void test() {
